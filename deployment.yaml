@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-chat-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-chat
+  template:
+    metadata:
+      labels:
+        app: simple-chat
+    spec:
+      containers:
+      - name: simple-chat
+        image: sowmya959/simple-chat-app:latest
+        ports:
+        - containerPort: 5000
