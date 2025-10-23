@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                    url: 'https://github.com/sowmyairuku/simple-chat-app.git',
+                    url: 'https://github.com/Sowmyairuku/casestudy.git',
                     credentialsId: 'github-token'
             }
         }
