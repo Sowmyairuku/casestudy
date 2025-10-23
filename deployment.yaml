@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
       - name: simple-chat
-        image: sowmya959/simple-chat-app:latest
+        image: sowmya959/simple-chat-app-v2:latest
+        imagePullPolicy: Always   # ensures Kubernetes pulls the latest image
         ports:
         - containerPort: 5000
