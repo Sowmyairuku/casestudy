@@ -6,9 +6,12 @@ pipeline {
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sowmyairuku/simple-chat-app.git'
+                git branch: 'main', 
+                    url: 'https://github.com/sowmyairuku/simple-chat-app.git',
+                    credentialsId: 'github-token'   // ✅ GitHub Personal Access Token
             }
         }
 
@@ -39,10 +42,10 @@ pipeline {
 
     post {
         success {
-            echo 'CI/CD Pipeline executed successfully!'
+            echo '✅ CI/CD Pipeline executed successfully!'
         }
         failure {
-            echo 'CI/CD Pipeline failed!'
+            echo '❌ CI/CD Pipeline failed!'
         }
     }
 }
